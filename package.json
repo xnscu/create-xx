@@ -1,0 +1,53 @@
+{
+  "name": "create-xx",
+  "version": "0.0.1",
+  "description": "create a npm create xx package",
+  "type": "module",
+  "bin": {
+    "create": "outfile.cjs"
+  },
+  "files": [
+    ".env",
+    "locales",
+    "outfile.cjs",
+    "template"
+  ],
+  "engines": {
+    "node": ">=v16.20.0"
+  },
+  "scripts": {
+    "preb": "npm --no-git-tag-version version minor",
+    "b": "yarn push",
+    "commit": "git add . && git commit -am ",
+    "c": "yarn commit",
+    "g": "yarn push",
+    "push": "yarn commit",
+    "_push": "git push origin",
+    "_pull": "git pull origin",
+    "postpush": "uname -s | grep -q Darwin && yarn _push || while true; do timeout 10 yarn _push && break; done",
+    "pull": "uname -s | grep -q Darwin && yarn _pull || while true; do timeout 10 yarn _pull && break; done",
+    "git": "bin/init-github.sh public xnscu",
+    "lab": "./index.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xnscu/create.git"
+  },
+  "keywords": [],
+  "author": "Nan Xiang <xnscu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xnscu/create/issues"
+  },
+  "homepage": "https://github.com/xnscu/create#readme",
+  "devDependencies": {
+    "ejs": "^3.1.9",
+    "gradient-string": "^2.0.2",
+    "kolorist": "^1.8.0",
+    "lint-staged": "^15.2.1",
+    "minimist": "^1.2.8",
+    "npm-run-all2": "^6.1.2",
+    "prompts": "^2.4.2",
+    "zx": "^7.2.3"
+  }
+}
