@@ -18,6 +18,10 @@
     "npm:reset": "rm -rf node_modules; rm package-lock.json; rm pnpm-lock.yaml; pnpm i"
   },
   "dependencies": {
+    "ejs": "^3.1.9",
+    "kolorist": "^1.8.0",
+    "minimist": "^1.2.8",
+    "prompts": "^2.4.2"
   },
   "devDependencies": {
     "dotenv-cli": "^6.0.0"

@@ -383,11 +383,21 @@ async function init() {
         const template = fs.readFileSync(filepath, 'utf-8')
         const dest = filepath.replace(/\.ejs$/, '')
         const commandContext = normalizedArgv
+
+        // 提取 CREATE_NAME：如果项目名以 "create-" 开头，则提取后面的部分
+        let createName = ''
+        if (projectName.startsWith('create-')) {
+          createName = projectName.replace(/^create-/, '')
+        } else if (defaultProjectName.startsWith('create-')) {
+          createName = defaultProjectName.replace(/^create-/, '')
+        }
+
         const context = {
           ...envContext,
           ...dataStore[dest],
           ...commandContext,
           TARGET_DIR: targetDir,
+          CREATE_NAME: createName,
         }
         const content = ejs.render(template, context)
 
