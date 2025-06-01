@@ -1,7 +1,7 @@
 {
   "name": "create-xx",
-  "version": "0.8.0",
-  "description": "create a npm create xx package",
+  "version": "0.9.0",
+  "description": "create a npm package that creates a npm package",
   "type": "module",
   "bin": {
     "create": "index.mjs"

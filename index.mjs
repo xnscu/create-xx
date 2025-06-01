@@ -19,7 +19,7 @@ import { postOrderDirectoryTraverse, preOrderDirectoryTraverse } from './utils/d
 import getCommand from './utils/getCommand.js'
 import sortDependencies from './utils/sortDependencies.js'
 import deepMerge from './utils/deepMerge.js'
-import pkg from './package.json' assert { type: 'json' }
+import pkg from './package.json' with { type: 'json' }
 
 const exec = util.promisify(execCallback)
 const __filename = fileURLToPath(import.meta.url)
