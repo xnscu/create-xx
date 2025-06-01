@@ -1,6 +1,6 @@
 {
   "name": "create-xx",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "create a npm create xx package",
   "type": "module",
   "bin": {
@@ -39,14 +39,14 @@
     "url": "https://github.com/xnscu/create/issues"
   },
   "homepage": "https://github.com/xnscu/create#readme",
-  "devDependencies": {
+  "dependencies": {
     "ejs": "^3.1.9",
-    "gradient-string": "^2.0.2",
     "kolorist": "^1.8.0",
-    "lint-staged": "^15.2.1",
     "minimist": "^1.2.8",
-    "npm-run-all2": "^6.1.2",
-    "prompts": "^2.4.2",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "gradient-string": "^2.0.2",
     "zx": "^7.2.3"
   }
 }
