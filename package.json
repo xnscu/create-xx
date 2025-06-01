@@ -1,15 +1,14 @@
 {
   "name": "create-xx",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "create a npm create xx package",
   "type": "module",
   "bin": {
-    "create": "outfile.cjs"
+    "create": "index.mjs"
   },
   "files": [
     ".env",
-    "locales",
-    "outfile.cjs",
+    "index.mjs",
     "template"
   ],
   "engines": {

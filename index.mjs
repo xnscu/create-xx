@@ -356,6 +356,7 @@ async function init() {
   const updatedPkg = sortDependencies(
     deepMerge(existingPkg, {
       name: projectName,
+      private: result.githubScope === 'private' ? true : false,
       scripts: {
         'git': `./bin/init-github.sh ${result.githubScope} ${result.githubUser}`,
         'set-g': `git remote set-url origin git@github.com:${result.githubUser}/${projectName}.git`,
