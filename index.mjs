@@ -338,12 +338,12 @@ async function init() {
     // 拷贝当前工程文件到目标目录
     // 如果目标文件夹在当前目录下，需要排除它以避免无限循环拷贝
     const excludeTargetDir = path.relative(cwd, root).split(path.sep)[0] || null
-    copyCurrentProjectFiles(cwd, root, excludeTargetDir)
+    copyCurrentProjectFiles(__dirname, root, excludeTargetDir)
   } else {
     console.log('当前运行在生成的 create-* 包中，仅渲染模板文件并拷贝bin文件夹')
 
     // 拷贝 bin 文件夹到目标目录
-    const binDir = path.resolve(cwd, 'bin')
+    const binDir = path.resolve(__dirname, 'bin')
     if (fs.existsSync(binDir)) {
       const targetBinDir = path.resolve(root, 'bin')
       copyCurrentProjectFiles(binDir, targetBinDir)
