@@ -1,16 +1,11 @@
 {
   "name": "create-xx",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "create a npm create xx package",
   "type": "module",
   "bin": {
     "create": "index.mjs"
   },
-  "files": [
-    ".env",
-    "index.mjs",
-    "template"
-  ],
   "engines": {
     "node": ">=v16.20.0"
   },
