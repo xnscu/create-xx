@@ -1,6 +1,6 @@
 {
   "name": "create-xx",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "create a npm create xx package",
   "type": "module",
   "bin": {

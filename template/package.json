@@ -2,6 +2,9 @@
   "name": "",
   "version": "0.0.0",
   "type": "module",
+  "bin": {
+    "create": "index.mjs"
+  },
   "scripts": {
     "env": "dotenv -e .env  --",
     "commit": "git add . && git commit -am ",

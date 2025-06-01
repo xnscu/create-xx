@@ -219,7 +219,7 @@ async function init() {
 
   // if any of the feature flags is set, we would skip the feature prompts
 
-  let targetDir = argv._[0] // ? `create-${argv._[0]}` : ''
+  let targetDir = argv._[0]
   const defaultProjectName = !targetDir ? 'create-xx' : targetDir
 
   const forceOverwrite = argv.force
@@ -364,7 +364,7 @@ async function init() {
       }
     })
   )
-  console.log({ argv, normalizedArgv, targetDir, projectName })
+  console.log({ argv, normalizedArgv, targetDir, projectName, defaultProjectName })
   fs.writeFileSync(packageJsonPath, JSON.stringify(updatedPkg, null, 2) + '\n', 'utf-8')
 
   // An external data store for callbacks to share data
@@ -385,11 +385,9 @@ async function init() {
         const commandContext = normalizedArgv
 
         // 提取 CREATE_NAME：如果项目名以 "create-" 开头，则提取后面的部分
-        let createName = ''
+        let createName = projectName
         if (projectName.startsWith('create-')) {
           createName = projectName.replace(/^create-/, '')
-        } else if (defaultProjectName.startsWith('create-')) {
-          createName = defaultProjectName.replace(/^create-/, '')
         }
 
         const context = {
