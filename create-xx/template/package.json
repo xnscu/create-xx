@@ -1,0 +1,25 @@
+{
+  "name": "",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "env": "dotenv -e .env  --",
+    "commit": "git add . && git commit -am ",
+    "preb": "npm --no-git-tag-version version minor",
+    "b": "yarn push",
+    "c": "yarn commit",
+    "push": "yarn commit",
+    "pull": "git pull origin master",
+    "postpush": "git push origin master",
+    "g": "yarn commit",
+    "postg": "yarn postpush",
+    "git": "bin/init-github.sh public xnscu",
+    "lab": "./index.mjs",
+    "npm:reset": "rm -rf node_modules; rm package-lock.json; rm pnpm-lock.yaml; pnpm i"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "dotenv-cli": "^6.0.0"
+  }
+}
